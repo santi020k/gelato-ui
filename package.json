@@ -27,7 +27,8 @@
     "pre-commit": "lint-staged && npm run test",
     "pre-push": "npm run build && npm run lint:fix",
     "prepare": "husky config/.husky",
-    "test": "vitest"
+    "test": "vitest --watch=false",
+    "test:dev": "vitest --watch=false"
   },
   "repository": {
     "type": "git",
