@@ -1,5 +1,5 @@
 {
-  "name": "@santi020k/gelato-ui",
+  "name": "@gelato-ui/theme",
   "version": "0.1.0",
   "description": "Web Components UI library",
   "type": "module",
@@ -16,13 +16,15 @@
     "/dist"
   ],
   "scripts": {
-    "build:clean": "rm -rf dist",
-    "build": "rollup --config rollup.config.js && rollup --config rollup.config.es.js",
-    "dev": "rollup --config rollup.config.js --watch",
+    "dev": "npm run build -- --watch ./src",
+    "build": "tsup src/index.ts --format esm --dts",
+    "build:dev": "tsup --watch",
+    "build:prod": "rm -rf ./dist && env NODE_ENV=production tsup",
+    "build:watch": "tsup --watch",
     "inspector": "npx @eslint/config-inspector@latest",
     "lint": "eslint . --report-unused-disable-directives",
     "lint:fix": "npm run lint -- --fix --max-warnings=0",
-    "pre-commit": "lint-staged",
+    "pre-commit": "lint-staged && npm run test",
     "pre-push": "npm run build && npm run lint:fix",
     "prepare": "husky config/.husky",
     "test": "vitest"
@@ -53,23 +55,15 @@
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^11.1.6",
-    "@santi020k/eslint-config-santi020k": "^2.1.0",
-    "@types/node": "^22.1.0",
-    "@types/rollup-plugin-generate-package-json": "^3.2.9",
+    "@santi020k/eslint-config-santi020k": "^3.0.0",
+    "@types/node": "^22.7.5",
     "cz-conventional-changelog": "^3.3.0",
-    "esbuild": "^0.23.0",
-    "happy-dom": "^14.12.3",
-    "husky": "^9.1.4",
-    "lint-staged": "^15.2.7",
-    "npm": "^10.8.2",
-    "rollup": "^4.19.2",
-    "rollup-plugin-generate-package-json": "^3.2.0",
-    "rollup-plugin-typescript2": "^0.36.0",
-    "tslib": "^2.6.3",
-    "typescript": "^5.5.4",
-    "vitest": "^2.0.5"
+    "happy-dom": "^15.7.4",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.2",
+    "tsup": "^8.3.0"
   },
   "lint-staged": {
     "*.{js, jsx, ts, tsx, md}": [
