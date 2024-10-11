@@ -1,10 +1,10 @@
 // @ts-check
-import { ConfigOptions, eslintConfig, OptionalOptions } from '@santi020k/eslint-config-santi020k'
+import { ConfigOption, eslintConfig, OptionalOption } from '@santi020k/eslint-config-santi020k'
 
 export default [
   ...eslintConfig({
-    config: [ConfigOptions.Ts],
-    optionals: [OptionalOptions.Cspell, OptionalOptions.Vitest]
+    config: [ConfigOption.Ts],
+    optionals: [OptionalOption.Cspell, OptionalOption.Vitest]
   }),
   {
     name: 'custom-local',
