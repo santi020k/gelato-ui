@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { HELLO_WORLD, TextComponent } from './'
 
-import { TestUtils } from '../../utils/test'
+import { TestUtils } from '../../../utils/test'
 
 const ALTERNATIVE_TEXT = 'Provided text'
 

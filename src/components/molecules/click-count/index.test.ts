@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { TestUtils } from './../../utils/test'
+import { TestUtils } from './../../../utils/test'
 import { ClickCountComponent } from './'
 
 describe('Click Count Component', () => {

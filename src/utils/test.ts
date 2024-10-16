@@ -7,10 +7,11 @@ export class TestUtils {
    * rendered element becomes available.
    * @param {string} tag
    * @param {object} attributes
+   * @param {children} unknown
    * @returns {Promise<HTMLElement>}
    */
-  static render(tag: string, attributes = {}): Promise<HTMLElement> {
-    TestUtils._renderToDocument(tag, attributes)
+  static render(tag: string, attributes = {}, children?: unknown): Promise<HTMLElement> {
+    TestUtils._renderToDocument(tag, attributes, children)
 
     return TestUtils._waitForComponentToRender(tag)
   }
@@ -20,11 +21,12 @@ export class TestUtils {
    * including given attributes.
    * @param {string} tag
    * @param {object} attributes
+   * @param {children} unknown
    */
-  static _renderToDocument(tag: string, attributes = {}): void {
+  static _renderToDocument(tag: string, attributes = {}, children?: unknown): void {
     const htmlAttributes = TestUtils._mapObjectToHTMLAttributes(attributes)
 
-    document.body.innerHTML = `<${tag} ${htmlAttributes}></${tag}>`
+    document.body.innerHTML = `<${tag} ${htmlAttributes}>${children}</${tag}>`
   }
 
   /**
