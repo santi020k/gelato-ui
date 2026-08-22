@@ -1,6 +1,8 @@
 # @santi020k/gelato-ui
 
-Welcome to @santi020k/gelato-ui, a new web components ui library.
+> **Historical prototype:** Gelato UI is no longer maintained and its packages were never published. Do not use this repository as a dependency or starter. Maintained design-system work lives in [Lumen](https://github.com/santi020k/lumen).
+
+Gelato UI explored a Stencil web-component library, React bindings, and a Docusaurus documentation site.
 
 ## Why Use This Library?
 
@@ -40,7 +42,7 @@ Then, install Gelato ui package:
 
 ## Contributing
 
-If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/santi020k/gelato-ui).
+This prototype no longer accepts feature work. Please use the [Lumen repository](https://github.com/santi020k/lumen) for maintained design-system issues and contributions. See [SECURITY.md](SECURITY.md) for the historical support boundary.
 
 Thank you for using @santi020k/gelato-ui.
 
